@@ -1,11 +1,14 @@
 export default function artist_reducer(state={}, action) {
   switch (action.type) {
+    case 'GET_ARTISTS':
+      return {...state, artistList: action.payload}
     case 'GET_ARTISTS_ALL':
       return {...state, artistList: action.payload}
-      break;
-  
+    case 'GET_ARTISTS_DETAIL':
+      return {...state, artistData: action.payload}
+    case 'CLEAR_ARTISTS_DETAIL':
+      return {...state, artistData: action.payload}
     default:
       return state;
-      break;
   }
 }
